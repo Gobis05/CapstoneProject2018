@@ -1,0 +1,35 @@
+<?php
+session_start();
+//Check if the user is already verified. If not, then checks credentials.
+//if(!isset($_SESSION['valid'])){
+  //header("Location: http://turing.plymouth.edu/~mg1021/NHOHVA/sign-in.php");
+//}
+//Start connection with the database
+$host = "localhost";
+$database = "NHOHVA";
+$user = "mg1021";$password = "goodspec";
+$charset = "utf8";
+$dsn = "mysql:host=$host;dbname=$database;charset=$charset";
+$opt = [
+  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+  PDO::ATTR_EMULATE_PREPARES   => false,
+];
+$pdo = new PDO($dsn, $user, $password, $opt);
+//queries for the location data.
+$locationqry = $pdo->query('SELECT ClubId, Longitude, Latitude, Logo, Address, URL, ClubEmail, PhoneNum, ClubName FROM Club');
+//An array of location data
+$longitude_latitude = "";
+//For each club location
+while($row = $locationqry->fetch()){
+  $feeQuery = $pdo->prepare('SELECT * FROM Fee WHERE ClubId = ?');
+  $feeQuery->execute([$row['ClubId']]);
+  $fee = $feeQuery->fetch();
+  $longitude_latitude = $longitude_latitude.$row['ClubId'].'_'.$row['Longitude'].'_'.$row['Latitude'].'_'.$row['Logo'].'_'.
+  $row['Address'].'_'.$row['URL'].'_'.$row['ClubEmail'].'_'.$row['PhoneNum'].'_'.$row['ClubName'].'_'.
+  $fee['Single'].'_'.$fee['GoldSingle'].'_'.$fee['Family'].'_'.$fee['GoldFamily'].'_'.$fee['PlatinumSponser'].'_'.
+  $fee['GoldSponser'].'_'.$fee['SilverSponser'].'_'.$fee['Business'].'_'.$fee['Flat'].'_'.'***';
+}
+//Output the data in jason format for ajax usage
+echo($longitude_latitude);
+?>

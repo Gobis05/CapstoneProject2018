@@ -1,0 +1,86 @@
+ALTER TABLE Club
+ADD Description varchar(5000);
+
+ALTER TABLE Club
+DROP COLUMN Description;
+
+INSERT INTO Club (Description)
+VALUES
+("", 
+"Up to 65 inches. Trail Bike, ATV, UTV and Side by Side Friendly. 
+Our system includes the Jericho Mountain State Park and Head Pond Tract as well as the Success Trail north to Success Pond, totaling 80 miles of well groomed woods riding. We offer wide gravel trails with technical, single track off-shoots and boast three black diamond trails. We are the official club of the Jericho ATV Festival and host many events throughout the year. Our OHRV trails are open for winter riding with wheels; only closing for the Mud Season. 
+The City of Berlin is very OHRV friendly with all roads within the urban compact open to OHRV riding until 10:00 PM to access food, fuel, lodging and the trail system
+
+
+",
+"30 Miles 
+All but one trail allows up to 65 inches. Trail Type: Mix of dirt and Class IV, Trail 2 leads to gas
+Maps for members only",
+"Open to ATV/UTVs - No Trail Bikes permitted 
+Class 5 Town Roads. No riding after sunset per town ordinance",
+"Trail Bikes Prohibited
+Up to 65 inches. Great North Woods Rider's Club's offers 8,000 acres on Perry Stream Land and Timber Co and have approximately 120 miles of trails that range from woods, to gravel roads, to mussy areas. The trails that are on Perry Stream and Indian Stream offer beautiful views and places for fishing. The Great North Woods Riders ATV trail system is part of Ride the Wilds, which is approximately 1000 miles of Northeast ATV Trail system. ",
+"",
+"Up to 65 inches 
+Lost Nation, Page Hill, Summer St., Walnut St., Railroad St, Kilkenny St.,  Main St. Parking is available at the lot next to Dalton Mountain Motorsports, Cranes Snowmobile Museam on Main St.",
+"Primarily a trial bike club responsible for the maintenance of the Hopkinton/Everett riding area",
+"No Trail Bikes",
+"Our landowners allow ATV's and UTV's up to 64 inches. in width (state limit)
+No trail bikes are allowed at this time on our woods trails. Trail bikes are allowed on the town road trails if they are registered for highway use. ",
+"Max width 65 inches 
+100% of our 100 mile trail system is located on private land. 
+We ask that when you visit, you help us keep these trails open for ATV use
+by riding prudently and obeying all rules! Some of our trails are logging
+roads and at times we share these with truck and other vehicular traffic and 
+some of our trails are limited to 65\" width. 
+Our trails are part of the “Ride the Wilds” trail System.
+
+
+",
+"Up to 65 inches Some trails do not alow trail bikes",
+"12 miles of railroad bed Freemont to East Derry
+Width limit 50 inches",
+"Trails run from Groveton, through Stratford and into Columbia NH. Corridor C of Ride the Wilds. 125 Mile of trails. Trail Bikes not allowed. Trails do accommodate machines over 50 inches",
+"Up to 65 inches",
+"",
+"Corridor trail, easy riding for all 
+Trail 1) Success Trail to Millsfield ATV Club
+Trail 2) Bog Brook Rd. to Milan",
+"Up to 65 inches No Trail Bikes",
+"Trail Bike Club");
+
+update Club set Description='Up to 65 inches. Trail Bike, ATV, UTV and Side by Side Friendly. 
+Our system includes the Jericho Mountain State Park and Head Pond Tract as well as the Success Trail north to Success Pond, totaling 80 miles of well groomed woods riding. We offer wide gravel trails with technical, single track off-shoots and boast three black diamond trails. We are the official club of the Jericho ATV Festival and host many events throughout the year. Our OHRV trails are open for winter riding with wheels; only closing for the Mud Season. 
+The City of Berlin is very OHRV friendly with all roads within the urban compact open to OHRV riding until 10:00 PM to access food, fuel, lodging and the trail system' where ClubId=1;
+
+update Club set Description='30 Miles 
+All but one trail allows up to 65 inches. Trail Type: Mix of dirt and Class IV, Trail 2 leads to gas
+Maps for members only' where ClubId=17;
+update Club set Description='Open to ATV/UTVs - No Trail Bikes permitted 
+Class 5 Town Roads. No riding after sunset per town ordinance' where ClubId=4;
+update Club set Description='Trail Bikes Prohibited
+ up to 65 inches. Great North Woods Rider's Club's offers 8,000 acres on Perry Stream Land and Timber Co and have approximately 120 miles of trails that range from woods, to gravel roads, to mussy areas. The trails that are on Perry Stream and Indian Stream offer beautiful views and places for fishing. The Great North Woods Riders ATV trail system is part of Ride the Wilds, which is approximately 1000 miles of Northeast ATV Trail system.' where ClubId=5;
+update Club set Description='Up to 65 inches 
+Lost Nation, Page Hill, Summer St., Walnut St., Railroad St, Kilkenny St.,  Main St. Parking is available at the lot next to Dalton Mountain Motorsports, Cranes Snowmobile Museam on Main St.' where ClubId=6;
+update Club set Description='Primarily a trial bike club responsible for the maintenance of the Hopkinton/Everett riding area' where ClubId=7;
+update Club set Description='No Trail Bikes' where ClubId=8;
+update Club set Description='Our landowners allow ATV's and UTV's up to 64 inches. in width (state limit)
+No trail bikes are allowed at this time on our woods trails. Trail bikes are allowed on the town road trails if they are registered for highway use.' where ClubId=21;
+update Club set Description='Max width 65 inches 
+100% of our 100 mile trail system is located on private land. 
+We ask that when you visit, you help us keep these trails open for ATV use
+by riding prudently and obeying all rules! Some of our trails are logging
+roads and at times we share these with truck and other vehicular traffic and 
+some of our trails are limited to 65\" width. 
+Our trails are part of the “Ride the Wilds” trail System.' where ClubId=22;
+update Club set Description='Up to 65 inches Some trails do not alow trail bikes' where ClubId=9;
+update Club set Description='12 miles of railroad bed Freemont to East Derry
+Width limit 50 inches' where ClubId=19;
+update Club set Description='Trails run from Groveton, through Stratford and into Columbia NH. Corridor C of Ride the Wilds. 125 Mile of trails. Trail Bikes not allowed. Trails do accommodate machines over 50 inches' where ClubId=10;
+update Club set Description='Up to 65 inches' where ClubId=11;
+update Club set Description='Corridor trail, easy riding for all 
+Trail 1) Success Trail to Millsfield ATV Club
+Trail 2) Bog Brook Rd. to Milan' where ClubId=14;
+update Club set Description='Up to 65 inches No Trail Bikes' where ClubId=15;
+update Club set Description='Trail Bike Club' where ClubId=13;
+
